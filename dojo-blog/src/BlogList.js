@@ -1,4 +1,5 @@
-const BlogList = ({ blogs, title}) => {
+const BlogList = ({ blogs, title}) => {  // we can use BlogList = {(props)} as well then all the items we send will be attached to it and we use it as commented below
+                                         // or we can use what all we need directly like this 
   // const blogs = props.blogs;
   // const title = props.title;
   // console.log(blogs);
