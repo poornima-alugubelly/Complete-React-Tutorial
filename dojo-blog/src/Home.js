@@ -13,6 +13,9 @@ const Home = () => {
     setBlogs(newBlogs);
   }
 
+  // useEffect hook is executed at every re-render, it is useful in cases like where we want to fetch data and so on
+  // be careful about using useState inside useEffect because it will cause an infinite loop, when program renders initially useEffect is called then useSte inside it is called 
+  // which causes re-render then useEffect is called again and so on and so forth
   useEffect(() => {
     console.log('use effect ran');
     console.log(blogs);
