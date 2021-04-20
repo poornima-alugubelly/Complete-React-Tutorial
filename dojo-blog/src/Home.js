@@ -11,6 +11,7 @@ const Home = () => {
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs" />
+    //filter function goes thru each item and creates an array only for those values for which True was returned
       <BlogList blogs={blogs.filter(blog => blog.author === 'mario')} title="Mario's Blogs" />
     </div>
   );
