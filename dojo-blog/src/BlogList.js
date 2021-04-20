@@ -1,3 +1,4 @@
+// accepted handleDelete as a prop
 const BlogList = ({ blogs, title, handleDelete }) => {
   return (
     <div className="blog-list">
@@ -6,6 +7,7 @@ const BlogList = ({ blogs, title, handleDelete }) => {
         <div className="blog-preview" key={blog.id} >
           <h2>{ blog.title }</h2>
           <p>Written by { blog.author }</p>
+    // on clicking the delete blog button , the blog is deleted based on its id
           <button onClick={() => handleDelete(blog.id)}>delete blog</button>
         </div>
       ))}
