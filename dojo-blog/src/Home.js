@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
+
+//to give user a message when the data is taking time to load
+
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
+    // setTimeout was put just to show real world simulation don't put it in real code
     setTimeout(() => {
       fetch('http://localhost:8000/blogs')
       .then(res => {
@@ -15,12 +19,13 @@ const Home = () => {
         setIsPending(false);
         setBlogs(data);
       })
-    }, 1000);
+    }, 1000); // argument for setTimeout
   }, [])
 
   return (
     <div className="home">
-      { isPending && <div>Loading...</div> }
+    // just like previous lesson putting conditional check with isPending
+      { isPending && <div>Loading...</div> }    
       {blogs && <BlogList blogs={blogs} />}
     </div>
   );
